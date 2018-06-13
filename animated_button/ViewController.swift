@@ -10,6 +10,42 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBAction func fadeIn(_ sender: Any) {
+        
+        image.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            
+            self.image.alpha = 1
+            
+        })
+        
+        
+    }
+    
+    @IBAction func slide(_ sender: Any) {
+        
+        image.center = CGPoint(x: image.center.x - 500, y: image.center.y)
+        UIView.animate(withDuration: 2, animations: {
+            
+            self.image.center = CGPoint(x: self.image.center.x + 500, y: self.image.center.y)
+          
+            
+        })
+        
+    }
+    @IBAction func grow(_ sender: Any) {
+        
+        image.frame = CGRect(x: 50, y: 200, width: 0, height: 0)
+        UIView.animate(withDuration: 1, animations: {
+            
+            self.image.frame = CGRect(x: 50, y: 200, width: 200, height: 113)
+            
+        })
+        
+        
+    }
+    
     @IBOutlet weak var button: UIButton!
     
     var counter = 2
